@@ -1,0 +1,75 @@
+.root {
+    min-width: 1200px;
+    min-height: 720px;
+    height: 66%;
+    width: 62.5%;
+    flex-direction: column;
+    padding: 12px;
+}
+
+#body-container {
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+/* region Mod list */
+
+#modlist-scrollview {
+    flex-grow: 0;
+    flex-shrink: 5;
+    margin-right: 12px;
+}
+
+#toggle-buttons-container {
+    margin-bottom: 8px;
+}
+
+#toggle-buttons-row {
+    flex-direction: row;
+    margin-bottom: 8px;
+}
+
+#enable-all-button {
+    margin-right: 8px;
+    flex-grow: 1;
+}
+
+#disable-all-button {
+    flex-grow: 1;
+}
+
+#revert-changes-button {
+    margin-bottom: 8px;
+}
+
+#changes-label {
+    white-space: normal;
+    -unity-text-align: upper-left;
+}
+
+.mods-foldout {
+    margin-bottom: 8px;
+}
+
+/* endregion */
+
+/* region Details */
+
+#details-scrollview {
+    flex-grow: 0;
+    flex-shrink: 2;
+}
+
+#details-name {
+    font-size: 22px;
+    /*noinspection CssUnknownProperty,CssUnknownTarget*/
+    -unity-font-definition: url('/Assets/Theme/Fonts/JetBrainsMono-Regular SDF.asset');
+    margin-bottom: 16px;
+    color: rgb(208, 213, 243);
+}
+
+#details-dependencies-foldout {
+    margin-top: 8px;
+}
+
+/* endregion */

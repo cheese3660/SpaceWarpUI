@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements"
+         xsi="http://www.w3.org/2001/XMLSchema-instance"
+         noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd"
+         editor-extension-mode="False">
+    <Style src="ModListDetailsItem.uss"/>
+    <ui:VisualElement class="details-item">
+        <ui:Label class="details-label details-key-label" text="ID"/>
+        <ui:Label class="details-label" text=":"/>
+        <ui:Label class="details-label details-value-label" text="SpaceWarp"/>
+    </ui:VisualElement>
+</ui:UXML>
