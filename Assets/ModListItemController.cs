@@ -4,55 +4,44 @@ using UnityEngine.UIElements;
 
 public class ModListItemController
 {
+    private VisualElement _element;
     private Label _nameLabel;
-
-    public ModInfo _modInfo;
-    public PluginInfo _pluginInfo;
-    public bool _isOutdated;
-    public bool _isUnsupported;
-    public bool _isDisabled;
 
     public void SetVisualElement(VisualElement visualElement)
     {
-        _nameLabel = visualElement.Q<Label>("mod-item-label");
+        _element = visualElement;
+        _element.userData = this;
+        _nameLabel = _element.Q<Label>(className: "mod-item-label");
     }
 
-    public string ModGuid;
-    public void SetData(ModListItemData data)
-    {
-        ModGuid = data.GUID;
-        _nameLabel.text = data.Name;
-    }
+    public string Guid;
+
+    public object Info;
 
     public void SetModInfo(ModInfo info)
     {
-        _modInfo = info;
-        _pluginInfo = null;
+        Info = info;
         _nameLabel.text = info.Name;
     }
 
     public void SetPluginInfo(PluginInfo info)
     {
-        _pluginInfo = info;
-        _modInfo = null;
+        Info = info;
         _nameLabel.text = info.Metadata.Name;
     }
 
-    public void SetIsOutdated(bool isOutdated)
+    public void SetIsOutdated()
     {
-        _isOutdated = isOutdated;
         _nameLabel.AddToClassList("outdated");
     }
 
-    public void SetIsUnsupported(bool isUnsupported)
+    public void SetIsUnsupported()
     {
-        _isUnsupported = isUnsupported;
         _nameLabel.AddToClassList("unsupported");
     }
 
-    public void SetIsDisabled(bool isDisabled)
+    public void SetIsDisabled()
     {
-        _isDisabled = isDisabled;
         _nameLabel.AddToClassList("disabled");
     }
 }

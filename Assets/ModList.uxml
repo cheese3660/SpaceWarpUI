@@ -7,7 +7,7 @@
     <Style src="ModListDetailsItem.uss"/>
     <ui:VisualElement class="root">
         <ui:VisualElement name="title-bar">
-            <ui:Button text="←"/>
+            <ui:Button name="back-button" text="←"/>
             <ui:Label text="spacewarp.modlist"/>
         </ui:VisualElement>
         <ui:VisualElement name="body-container">
@@ -17,23 +17,23 @@
                         <ui:Button name="enable-all-button" text="ENABLE ALL"/>
                         <ui:Button name="disable-all-button" text="DISABLE ALL"/>
                     </ui:VisualElement>
-                    <ui:Button name="revert-changes-button" text="REVERT ALL CHANGES"/>
-                    <ui:Label name="changes-label" text="{0} changes detected. Please restart the game."/>
+                    <ui:Button name="revert-changes-button" text="REVERT ALL CHANGES" />
+                    <ui:Label name="changes-label" text="Changes detected: {0}. Please restart the game." style="display: none;"/>
                 </ui:VisualElement>
-                <ui:Foldout class="mods-foldout" text="SPACEWARP MODS">
-                    <ui:ListView focusable="true" name="spacewarp-mod-list" />
+                <ui:Foldout class="mods-foldout" name="spacewarp-mod-foldout" text="SPACEWARP MODS" style="display: none;">
+                    <ui:VisualElement name="spacewarp-mod-list" />
                 </ui:Foldout>
-                <ui:Foldout class="mods-foldout" text="UNMANAGED MODS" value="true">
-                    <ui:ListView focusable="true" name="unmanaged-info-mod-list" />
-                    <ui:ListView focusable="true" name="unmanaged-mod-list" />
+                <ui:Foldout class="mods-foldout" name="other-mod-foldout" text="OTHER MODS" style="display: none;">
+                    <ui:VisualElement name="other-info-mod-list" />
+                    <ui:VisualElement name="other-mod-list" />
                 </ui:Foldout>
-                <ui:Foldout class="mods-foldout" text="DISABLED MODS">
-                    <ui:ListView focusable="true" name="disabled-info-mod-list" />
-                    <ui:ListView focusable="true" name="disabled-mod-list" />
+                <ui:Foldout class="mods-foldout" name="disabled-mod-foldout" text="DISABLED MODS" style="display: none;">
+                    <ui:VisualElement name="disabled-info-mod-list" />
+                    <ui:VisualElement name="disabled-mod-list" />
                 </ui:Foldout>
             </ui:ScrollView>
-            <ui:ScrollView name="details-scrollview" scroll-deceleration-rate="0,135" elasticity="0,1" style="">
-                <ui:VisualElement name="details-container">
+            <ui:ScrollView name="details-scrollview" scroll-deceleration-rate="0,135" elasticity="0,1">
+                <ui:VisualElement name="details-container" style="visibility: hidden;">
                     <ui:Label name="details-name" text="SPACEWARP"/>
                     <ui:VisualElement class="details-item">
                         <ui:Label class="details-label details-key-label" text="ID"/>
@@ -66,16 +66,17 @@
                         <ui:Label class="details-label details-value-label" name="details-ksp-version" text="0.1.0 - *"/>
                     </ui:VisualElement>
                     <ui:Foldout name="details-dependencies-foldout" text="Dependencies">
-                        <ui:ListView focusable="true" name="details-dependencies-list" />
-                        <ui:VisualElement class="details-item">
-                            <ui:Label class="details-label details-key-label" text="SpaceWarp"/>
-                            <ui:Label class="details-label" text=":"/>
-                            <ui:Label class="details-label details-value-label" text="0.4.0 - *"/>
-                        </ui:VisualElement>
-                        <ui:VisualElement class="details-item">
-                            <ui:Label class="details-label details-key-label" text="UITK for KSP 2"/>
-                            <ui:Label class="details-label" text=":"/>
-                            <ui:Label class="details-label details-value-label" text="0.2.0 - *"/>
+                        <ui:VisualElement name="details-dependencies-list">
+                            <ui:VisualElement class="details-item">
+                                <ui:Label class="details-label details-key-label" text="SpaceWarp"/>
+                                <ui:Label class="details-label" text=":"/>
+                                <ui:Label class="details-label details-value-label" text="0.4.0 - *"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="details-item">
+                                <ui:Label class="details-label details-key-label" text="UITK for KSP 2"/>
+                                <ui:Label class="details-label" text=":"/>
+                                <ui:Label class="details-label details-value-label" text="0.2.0 - *"/>
+                            </ui:VisualElement>
                         </ui:VisualElement>
                     </ui:Foldout>
                 </ui:VisualElement>

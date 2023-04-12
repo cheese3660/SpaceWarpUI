@@ -266,7 +266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7c2f6c13e6214459600f3ace160b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ListEntryTemplate: {fileID: 9197481963319205126, guid: 6325fa0fd901c4d459a7ff3d376672cd, type: 3}
+  listEntryTemplate: {fileID: 9197481963319205126, guid: 6325fa0fd901c4d459a7ff3d376672cd, type: 3}
+  dependencyTemplate: {fileID: 9197481963319205126, guid: 635f826bc701468a9c172e82388090d0, type: 3}
 --- !u!1 &2048753978
 GameObject:
   m_ObjectHideFlags: 0
