@@ -8,77 +8,69 @@
     <ui:VisualElement class="root">
         <ui:VisualElement name="title-bar">
             <ui:Button name="back-button" text="←"/>
-            <ui:Label text="spacewarp.modlist"/>
+            <SpaceWarp.UI.Controls.IntlLabel text="SpaceWarp/ModList/Header"/>
         </ui:VisualElement>
         <ui:VisualElement name="body-container">
             <ui:ScrollView name="modlist-scrollview" scroll-deceleration-rate="0,135" elasticity="0,1">
                 <ui:VisualElement name="toggle-buttons-container">
                     <ui:VisualElement name="toggle-buttons-row">
-                        <ui:Button name="enable-all-button" text="ENABLE ALL"/>
-                        <ui:Button name="disable-all-button" text="DISABLE ALL"/>
+                        <SpaceWarp.UI.Controls.IntlButton name="enable-all-button" text="SpaceWarp/ModList/EnableAll"/>
+                        <SpaceWarp.UI.Controls.IntlButton name="disable-all-button" text="SpaceWarp/ModList/DisableAll"/>
                     </ui:VisualElement>
-                    <ui:Button name="revert-changes-button" text="REVERT ALL CHANGES" />
-                    <ui:Label name="changes-label" text="Changes detected: {0}. Please restart the game." style="display: none;"/>
+                    <SpaceWarp.UI.Controls.IntlButton name="revert-changes-button" text="SpaceWarp/ModList/RevertChanges"/>
+                    <ui:Label name="changes-label" text="SpaceWarp/ModList/ChangesDetected"
+                              style="display: none;"/>
                 </ui:VisualElement>
-                <ui:Foldout class="mods-foldout" name="spacewarp-mod-foldout" text="SPACEWARP MODS" style="display: none;">
-                    <ui:VisualElement name="spacewarp-mod-list" />
-                </ui:Foldout>
-                <ui:Foldout class="mods-foldout" name="other-mod-foldout" text="OTHER MODS" style="display: none;">
-                    <ui:VisualElement name="other-info-mod-list" />
-                    <ui:VisualElement name="other-mod-list" />
-                </ui:Foldout>
-                <ui:Foldout class="mods-foldout" name="disabled-mod-foldout" text="DISABLED MODS" style="display: none;">
-                    <ui:VisualElement name="disabled-info-mod-list" />
-                    <ui:VisualElement name="disabled-mod-list" />
-                </ui:Foldout>
+                <SpaceWarp.UI.Controls.IntlFoldout name="spacewarp-mod-foldout" text="SpaceWarp/ModList/SpaceWarpMods" class="mods-foldout"
+                            style="display: none;">
+                    <ui:VisualElement name="spacewarp-mod-list"/>
+                </SpaceWarp.UI.Controls.IntlFoldout>
+                <SpaceWarp.UI.Controls.IntlFoldout name="other-mod-foldout" text="SpaceWarp/ModList/UnmanagedMods" class="mods-foldout" style="display: none;">
+                    <ui:VisualElement name="other-info-mod-list"/>
+                    <ui:VisualElement name="other-mod-list"/>
+                </SpaceWarp.UI.Controls.IntlFoldout>
+                <SpaceWarp.UI.Controls.IntlFoldout name="disabled-mod-foldout" text="SpaceWarp/ModList/DisabledMods" class="mods-foldout"
+                            style="display: none;">
+                    <ui:VisualElement name="disabled-info-mod-list"/>
+                    <ui:VisualElement name="disabled-mod-list"/>
+                </SpaceWarp.UI.Controls.IntlFoldout>
             </ui:ScrollView>
             <ui:ScrollView name="details-scrollview" scroll-deceleration-rate="0,135" elasticity="0,1">
                 <ui:VisualElement name="details-container" style="visibility: hidden;">
-                    <ui:Label name="details-name" text="SPACEWARP"/>
+                    <ui:Label name="details-name"/>
                     <ui:VisualElement class="details-item">
-                        <ui:Label class="details-label details-key-label" text="ID"/>
-                        <ui:Label class="details-label" text=":"/>
-                        <ui:Label class="details-label details-value-label" name="details-id" text="SpaceWarp"/>
+                        <ui:Label text="ID" class="details-label details-key-label"/>
+                        <ui:Label text=":" class="details-label"/>
+                        <ui:Label name="details-id" class="details-label details-value-label"/>
                     </ui:VisualElement>
                     <ui:VisualElement class="details-item">
-                        <ui:Label class="details-label details-key-label" text="AUTHOR"/>
-                        <ui:Label class="details-label" text=":"/>
-                        <ui:Label class="details-label details-value-label" name="details-author" text="SpaceWarp Team"/>
+                        <ui:Label text="SpaceWarp/ModList/Author" class="details-label details-key-label"/>
+                        <ui:Label text=":" class="details-label"/>
+                        <ui:Label name="details-author" class="details-label details-value-label"/>
                     </ui:VisualElement>
                     <ui:VisualElement class="details-item">
-                        <ui:Label class="details-label details-key-label" text="VERSION"/>
-                        <ui:Label class="details-label" text=":"/>
-                        <ui:Label class="details-label details-value-label" name="details-version" text="1.1.0"/>
+                        <ui:Label text="SpaceWarp/ModList/Version" class="details-label details-key-label"/>
+                        <ui:Label text=":" class="details-label"/>
+                        <ui:Label name="details-version" class="details-label details-value-label"/>
                     </ui:VisualElement>
                     <ui:VisualElement class="details-item">
-                        <ui:Label class="details-label details-key-label" text="SOURCE"/>
-                        <ui:Label class="details-label" text=":"/>
-                        <ui:Label class="details-label details-value-label" name="details-source" text="https://github.com/SpaceWarpDev/SpaceWarp"/>
+                        <ui:Label text="SpaceWarp/ModList/Source" class="details-label details-key-label"/>
+                        <ui:Label text=":" class="details-label"/>
+                        <ui:Label name="details-source" class="details-label details-value-label"/>
                     </ui:VisualElement>
                     <ui:VisualElement class="details-item">
-                        <ui:Label class="details-label details-key-label" text="DESCRIPTION"/>
-                        <ui:Label class="details-label" text=":"/>
-                        <ui:Label class="details-label details-value-label" name="details-description" text="SpaceWarp is an API for KSP 2 mod developers. SpaceWarp is an API for KSP 2 mod developers. SpaceWarp is an API for KSP 2 mod developers. SpaceWarp is an API for KSP 2 mod developers. SpaceWarp is an API for KSP 2 mod developers. SpaceWarp is an API for KSP 2 mod developers. SpaceWarp is an API for KSP 2 mod developers. SpaceWarp is an API for KSP 2 mod developers. "/>
+                        <ui:Label text="SpaceWarp/ModList/Description" class="details-label details-key-label"/>
+                        <ui:Label text=":" class="details-label"/>
+                        <ui:Label name="details-description" class="details-label details-value-label"/>
                     </ui:VisualElement>
                     <ui:VisualElement class="details-item">
-                        <ui:Label class="details-label details-key-label" text="KSP 2 VERSION"/>
-                        <ui:Label class="details-label" text=":"/>
-                        <ui:Label class="details-label details-value-label" name="details-ksp-version" text="0.1.0 - *"/>
+                        <ui:Label text="SpaceWarp/ModList/KSP2Version" class="details-label details-key-label"/>
+                        <ui:Label text=":" class="details-label"/>
+                        <ui:Label name="details-ksp-version" class="details-label details-value-label"/>
                     </ui:VisualElement>
-                    <ui:Foldout name="details-dependencies-foldout" text="Dependencies">
-                        <ui:VisualElement name="details-dependencies-list">
-                            <ui:VisualElement class="details-item">
-                                <ui:Label class="details-label details-key-label" text="SpaceWarp"/>
-                                <ui:Label class="details-label" text=":"/>
-                                <ui:Label class="details-label details-value-label" text="0.4.0 - *"/>
-                            </ui:VisualElement>
-                            <ui:VisualElement class="details-item">
-                                <ui:Label class="details-label details-key-label" text="UITK for KSP 2"/>
-                                <ui:Label class="details-label" text=":"/>
-                                <ui:Label class="details-label details-value-label" text="0.2.0 - *"/>
-                            </ui:VisualElement>
-                        </ui:VisualElement>
-                    </ui:Foldout>
+                    <SpaceWarp.UI.Controls.IntlFoldout name="details-dependencies-foldout" text="SpaceWarp/ModList/Dependencies">
+                        <ui:VisualElement name="details-dependencies-list"/>
+                    </SpaceWarp.UI.Controls.IntlFoldout>
                 </ui:VisualElement>
             </ui:ScrollView>
         </ui:VisualElement>

@@ -5,8 +5,8 @@
 >
     <Style src="ModListDetailsItem.uss"/>
     <ui:VisualElement class="details-item">
-        <ui:Label class="details-label details-key-label" text="ID"/>
+        <ui:Label class="details-label details-key-label" />
         <ui:Label class="details-label" text=":"/>
-        <ui:Label class="details-label details-value-label" text="SpaceWarp"/>
+        <ui:Label class="details-label details-value-label" />
     </ui:VisualElement>
 </ui:UXML>

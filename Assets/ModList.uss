@@ -63,7 +63,7 @@
 #details-name {
     font-size: 22px;
     /*noinspection CssUnknownProperty,CssUnknownTarget*/
-    -unity-font-definition: url('/Assets/Theme/Fonts/JetBrainsMono-Regular SDF.asset');
+    -unity-font-definition: var(--font-regular);
     margin-bottom: 16px;
     color: rgb(208, 213, 243);
 }

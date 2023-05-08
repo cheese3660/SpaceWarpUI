@@ -1,6 +1,5 @@
+/*noinspection CssUnknownTarget*/
 @import url("/Packages/com.unity.ui/PackageResources/StyleSheets/Generated/Default.tss.asset");
 
+/*noinspection CssUnknownTarget*/
 @import url("KerbalUI.uss");
-/*noinspection CssUnknownTarget*/
-
-/*noinspection CssUnknownTarget*/

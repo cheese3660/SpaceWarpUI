@@ -2,8 +2,13 @@
 
 /*noinspection CssInvalidPseudoSelector*/
 :root {
-    /*noinspection CssUnknownTarget,CssUnknownProperty*/
-    -unity-font-definition: url('/Assets/Theme/Fonts/JetBrainsMono-Bold SDF.asset');
+    /*noinspection CssUnknownTarget*/
+    --font-regular: url('/Assets/Theme/Fonts/JetBrainsMono-Regular SDF.asset');
+    /*noinspection CssUnknownTarget*/
+    --font-medium: url('/Assets/Theme/Fonts/JetBrainsMono-Medium SDF.asset');
+    /*noinspection CssUnknownTarget*/
+    --font-bold: url('/Assets/Theme/Fonts/JetBrainsMono-Bold SDF.asset');
+    -unity-font-definition: var(--font-bold);
     color: #c0c7d5;
 }
 
@@ -376,7 +381,7 @@
     align-items: center;
 }
 
-#title-bar > Button {
+#title-bar > .unity-button {
     height: 32px;
     width: 32px;
     margin-right: 10px;
@@ -388,22 +393,21 @@
     border-radius: 8px;
 }
 
-#title-bar > Button:hover {
+#title-bar > .unity-button:hover {
     border-color: #e8ecfe;
     color: #e8ecfe;
 }
 
-#title-bar > Button:active {
+#title-bar > .unity-button:active {
     border-color: #b4bce4;
     color: #b4bce4;
 }
 
-#title-bar > Label {
+#title-bar > .unity-label {
     -unity-text-align: upper-left;
     font-size: 25px;
     -unity-font-style: normal;
-    /*noinspection CssUnknownProperty,CssUnknownTarget*/
-    -unity-font-definition: url('/Assets/Theme/Fonts/JetBrainsMono-Regular SDF.asset');
+    -unity-font-definition: var(--font-regular);
     color: rgb(175, 178, 190);
 }
 
