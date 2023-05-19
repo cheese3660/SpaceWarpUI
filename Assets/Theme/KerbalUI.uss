@@ -49,19 +49,35 @@
 
 /*region ============ Scroller ============ */
 
-.unity-scroller {
+.unity-scroller--vertical {
     margin-left: 2px;
     margin-right: -4px;
     width: 8px;
 }
 
-.unity-scroller > .unity-base-field {
+.unity-scroller--horizontal {
+    margin-top: 2px;
+    margin-bottom: -4px;
+    height: 8px;
+}
+
+.unity-scroller--vertical > .unity-base-field {
     width: 8px;
     margin: 8px 0;
 }
 
-.unity-scroller > .unity-base-field > VisualElement {
+.unity-scroller--horizontal > .unity-base-field {
+    height: 8px;
+    margin: 0 8px;
+}
+
+.unity-scroller--vertical > .unity-base-field > VisualElement {
     width: 8px;
+}
+
+.unity-scroller--horizontal > .unity-base-field > VisualElement {
+    margin-top: -4px;
+    height: 8px;
 }
 
 .unity-scroller > .unity-scroller__low-button, .unity-scroller > .unity-scroller__high-button {
@@ -72,15 +88,26 @@
     -unity-background-image-tint-color: #474e5b;
 }
 
-.unity-scroller .unity-base-slider__drag-container {
+.unity-scroller--vertical .unity-base-slider__drag-container {
     width: 8px;
+}
+
+.unity-scroller--horizontal .unity-base-slider__drag-container {
+    height: 8px;
 }
 
 .unity-scroller .unity-base-slider__tracker {
     background-color: rgba(0, 0, 0, 0);
     border-width: 0;
+}
+
+.unity-scroller--vertical .unity-base-slider__tracker {
     width: 5px;
     margin-left: 3px;
+}
+
+.unity-scroller--horizontal .unity-base-slider__tracker {
+    width: 0;
 }
 
 .unity-scroller:hover .unity-base-slider__tracker {
@@ -88,11 +115,19 @@
 }
 
 .unity-scroller .unity-base-slider__dragger {
-    margin-left: -1px;
     background-color: #d1d9e1;
-    width: 4px;
     border-width: 0;
     border-radius: 4px;
+}
+
+.unity-scroller--vertical .unity-base-slider__dragger {
+    margin-left: -1px;
+    width: 4px;
+}
+
+.unity-scroller--horizontal .unity-base-slider__dragger {
+    margin-top: -2px;
+    height: 4px;
 }
 
 .unity-scroller .unity-base-slider__dragger:hover {
@@ -404,7 +439,7 @@
 }
 
 #title-bar > .unity-label {
-    -unity-text-align: upper-left;
+    -unity-text-align: middle-left;
     font-size: 25px;
     -unity-font-style: normal;
     -unity-font-definition: var(--font-regular);
