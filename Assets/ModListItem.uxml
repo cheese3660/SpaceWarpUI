@@ -4,7 +4,7 @@
          editor-extension-mode="False">
     <Style src="ModListItem.uss"/>
     <ui:VisualElement class="mod-item">
-        <ui:Label class="mod-item-label" />
-        <ui:Toggle class="toggle mod-toggle" />
+        <ui:Label class="mod-item-label"/>
+        <ui:Toggle class="toggle mod-toggle"/>
     </ui:VisualElement>
 </ui:UXML>

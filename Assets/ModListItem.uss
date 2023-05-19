@@ -17,18 +17,6 @@
     padding: 6px 6px 6px 8px;
 }
 
-.mod-item-label.disabled {
-    color: #808080;
-}
-
-.mod-item-label.outdated {
-    color: #FFEB04;
-}
-
-.mod-item-label.unsupported {
-    color: #FF0000;
-}
-
 .mod-toggle {
     -unity-text-align: middle-left;
     padding: 4px;

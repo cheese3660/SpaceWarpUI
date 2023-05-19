@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.IO;
 using System.Linq;
 using BepInEx;
@@ -30,14 +31,17 @@ public class ModListView : MonoBehaviour
     private VisualElement _disabledModList;
 
     // Details UI element references
+    private VisualElement _detailsContainer;
     private Label _detailsNameLabel;
     private Label _detailsIdLabel;
     private Label _detailsAuthorLabel;
     private Label _detailsVersionLabel;
-    private Label _detailsSourceLabel;
+    private Button _detailsSourceLink;
     private Label _detailsDescriptionLabel;
     private Label _detailsKspVersionLabel;
-    private VisualElement _detailsContainer;
+    private VisualElement _detailsOutdatedWarning;
+    private VisualElement _detailsUnsupportedWarning;
+    private VisualElement _detailsDisabledWarning;
     private Foldout _detailsDependenciesFoldout;
     private VisualElement _detailsDependenciesList;
 
@@ -86,14 +90,18 @@ public class ModListView : MonoBehaviour
         _disabledModList = root.Q<VisualElement>("disabled-mod-list");
 
         // Store references to the selected mod details UI element references
+        _detailsContainer = root.Q<VisualElement>("details-container");
         _detailsNameLabel = root.Q<Label>("details-name");
         _detailsIdLabel = root.Q<Label>("details-id");
         _detailsAuthorLabel = root.Q<Label>("details-author");
         _detailsVersionLabel = root.Q<Label>("details-version");
-        _detailsSourceLabel = root.Q<Label>("details-source");
+        _detailsSourceLink = root.Q<Button>("details-source");
         _detailsDescriptionLabel = root.Q<Label>("details-description");
         _detailsKspVersionLabel = root.Q<Label>("details-ksp-version");
-        _detailsContainer = root.Q<VisualElement>("details-container");
+
+        _detailsOutdatedWarning = root.Q<VisualElement>("details-outdated-warning");
+        _detailsUnsupportedWarning = root.Q<VisualElement>("details-unsupported-warning");
+        _detailsDisabledWarning = root.Q<VisualElement>("details-disabled-warning");
 
         _detailsDependenciesFoldout = root.Q<Foldout>("details-dependencies-foldout");
         _detailsDependenciesList = root.Q<VisualElement>("details-dependencies-list");
@@ -113,6 +121,15 @@ public class ModListView : MonoBehaviour
         {
             _disabledModFoldout.style.display = DisplayStyle.Flex;
         }
+
+        _detailsSourceLink.RegisterCallback<ClickEvent>(_ =>
+        {
+            var url = _detailsSourceLink.text.Trim();
+            if (url.StartsWith("http"))
+            {
+                Application.OpenURL(url);
+            }
+        });
     }
 
     private void FillModLists()
@@ -170,7 +187,17 @@ public class ModListView : MonoBehaviour
             {
                 data.Guid = pluginInfo.Metadata.GUID;
                 data.SetModInfo(modInfo);
-                data.SetIsOutdated();
+                data.SetIsDisabled();
+
+                if (SpaceWarpManager.ModsOutdated[modInfo.ModID])
+                {
+                    data.SetIsOutdated();
+                }
+
+                if (SpaceWarpManager.ModsUnsupported[modInfo.ModID])
+                {
+                    data.SetIsUnsupported();
+                }
             });
         }
 
@@ -274,20 +301,20 @@ public class ModListView : MonoBehaviour
                 return;
 
             case ModInfo modInfo:
-                SetSelectedModInfo(modInfo);
+                SetSelectedModInfo(data, modInfo);
                 return;
 
             case PluginInfo plugin:
-                SetSelectedPluginInfo(plugin);
+                SetSelectedPluginInfo(data, plugin);
                 return;
         }
     }
 
-    private void SetSelectedModInfo(ModInfo info)
+    private void SetSelectedModInfo(ModListItemController data, ModInfo info)
     {
         SetSelected(
             info.Name,
-            info.ModID,
+            data.Guid,
             info.Author,
             info.Version,
             info.Source,
@@ -295,13 +322,23 @@ public class ModListView : MonoBehaviour
             info.SupportedKsp2Versions.ToString(),
             info.Dependencies
                 ?.Select(dependencyInfo => (dependencyInfo.ID, dependencyInfo.Version.ToString()))
-                .ToList()
+                .ToList(),
+            data.IsOutdated,
+            data.IsUnsupported,
+            data.IsDisabled
         );
     }
 
-    private void SetSelectedPluginInfo(PluginInfo info)
+    private void SetSelectedPluginInfo(ModListItemController data, PluginInfo info)
     {
-        SetSelected(info.Metadata.Name, info.Metadata.GUID, version: info.Metadata.Version.ToString());
+        SetSelected(
+            info.Metadata.Name,
+            data.Guid,
+            version: info.Metadata.Version.ToString(),
+            isOutdated: data.IsOutdated,
+            isUnsupported: data.IsUnsupported,
+            isDisabled: data.IsDisabled
+        );
     }
 
     private void SetSelected(
@@ -313,6 +350,9 @@ public class ModListView : MonoBehaviour
         string description = "",
         string kspVersion = "",
         List<(string, string)> dependencies = null,
+        bool isOutdated = false,
+        bool isUnsupported = false,
+        bool isDisabled = false,
         bool hasSelected = true
     )
     {
@@ -322,11 +362,12 @@ public class ModListView : MonoBehaviour
         _detailsIdLabel.text = id;
         _detailsAuthorLabel.text = author;
         _detailsVersionLabel.text = version;
-        _detailsSourceLabel.text = source;
+        _detailsSourceLink.text = "https://github.com";
         _detailsDescriptionLabel.text = description;
         _detailsKspVersionLabel.text = kspVersion;
 
         SetDependencies(dependencies);
+        SetModWarnings(isOutdated, isUnsupported, isDisabled);
     }
 
     private void SetDependencies(List<(string, string)> dependencies)
@@ -346,6 +387,13 @@ public class ModListView : MonoBehaviour
             dependencyElement.Q<Label>(className: "details-value-label").text = version;
             _detailsDependenciesList.Add(dependencyElement);
         }
+    }
+
+    private void SetModWarnings(bool isOutdated, bool isUnsupported, bool isDisabled)
+    {
+        _detailsOutdatedWarning.style.display = isOutdated ? DisplayStyle.Flex : DisplayStyle.None;
+        _detailsUnsupportedWarning.style.display = isUnsupported ? DisplayStyle.Flex : DisplayStyle.None;
+        _detailsDisabledWarning.style.display = isDisabled ? DisplayStyle.Flex : DisplayStyle.None;
     }
 
     private void ClearSelected()

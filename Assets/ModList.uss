@@ -12,6 +12,18 @@
     flex-grow: 1;
 }
 
+.unity-label.disabled, .disabled > .unity-label {
+    color: #808080;
+}
+
+.unity-label.outdated, .outdated > .unity-label {
+    color: #FFEB04;
+}
+
+.unity-label.unsupported, .unsupported > .unity-label {
+    color: #FF0000;
+}
+
 /* region Mod list */
 
 #modlist-scrollview {
@@ -55,6 +67,33 @@
 
 /* region Details */
 
+.details-item {
+    flex-direction: row;
+    padding: 4px;
+}
+
+.details-label {
+    color: rgb(208, 213, 243);
+    margin: 4px 0 8px 0;
+    padding: 0;
+    white-space: normal;
+}
+
+.details-key-label {
+    -unity-font-style: bold;
+}
+
+.details-value-label {
+    margin-left: 4px;
+    flex-shrink: 1;
+}
+
+.details-warning {
+    margin-left: 4px;
+    flex-shrink: 1;
+    flex-direction: row;
+}
+
 #details-scrollview {
     flex-grow: 0;
     flex-shrink: 2;
@@ -76,8 +115,9 @@
 
 #footer {
     flex-direction: row;
-    margin: 8px 0;
+    margin-top: 8px;
     justify-content: space-between;
+    flex-shrink: 0;
 }
 
 #footer > .unity-button {

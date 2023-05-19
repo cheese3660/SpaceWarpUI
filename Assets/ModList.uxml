@@ -3,7 +3,6 @@
          noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd"
          editor-extension-mode="False">
     <Style src="ModList.uss"/>
-    <Style src="ModListDetailsItem.uss"/>
     <ui:VisualElement class="root">
         <ui:VisualElement name="title-bar">
             <ui:Button name="back-button" text="←"/>
@@ -41,6 +40,12 @@
                         <ui:Label text="ID" class="details-label details-key-label"/>
                         <ui:Label text=":" class="details-label"/>
                         <ui:Label name="details-id" class="details-label details-value-label"/>
+                        <ui:VisualElement name="details-disabled-warning" class="details-warning disabled"
+                                          style="display: none;">
+                            <ui:Label text="(" class="details-label"/>
+                            <ui:Label text="#SpaceWarp/ModList/disabled" class="details-label"/>
+                            <ui:Label text=")" class="details-label"/>
+                        </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement class="details-item">
                         <ui:Label text="#SpaceWarp/ModList/Author" class="details-label details-key-label"/>
@@ -51,11 +56,17 @@
                         <ui:Label text="#SpaceWarp/ModList/Version" class="details-label details-key-label"/>
                         <ui:Label text=":" class="details-label"/>
                         <ui:Label name="details-version" class="details-label details-value-label"/>
+                        <ui:VisualElement name="details-outdated-warning" class="details-warning outdated"
+                                          style="display: none;">
+                            <ui:Label text="(" class="details-label"/>
+                            <ui:Label text="#SpaceWarp/ModList/outdated" class="details-label"/>
+                            <ui:Label text=")" class="details-label"/>
+                        </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:VisualElement class="details-item">
                         <ui:Label text="#SpaceWarp/ModList/Source" class="details-label details-key-label"/>
                         <ui:Label text=":" class="details-label"/>
-                        <ui:Label name="details-source" class="details-label details-value-label"/>
+                        <ui:Button name="details-source" class="details-label link details-value-label"/>
                     </ui:VisualElement>
                     <ui:VisualElement class="details-item">
                         <ui:Label text="#SpaceWarp/ModList/Description" class="details-label details-key-label"/>
@@ -66,6 +77,12 @@
                         <ui:Label text="#SpaceWarp/ModList/KSP2Version" class="details-label details-key-label"/>
                         <ui:Label text=":" class="details-label"/>
                         <ui:Label name="details-ksp-version" class="details-label details-value-label"/>
+                        <ui:VisualElement name="details-unsupported-warning" class="details-warning unsupported"
+                                          style="display: none;">
+                            <ui:Label text="(" class="details-label"/>
+                            <ui:Label text="#SpaceWarp/ModList/unsupported" class="details-label"/>
+                            <ui:Label text=")" class="details-label"/>
+                        </ui:VisualElement>
                     </ui:VisualElement>
                     <ui:Foldout name="details-dependencies-foldout" text="#SpaceWarp/ModList/Dependencies">
                         <ui:VisualElement name="details-dependencies-list"/>
