@@ -23,7 +23,7 @@
 
 /* endregion */
 
-/*region ============ ScrollView ============ */
+/* region ============ ScrollView ============ */
 
 .unity-scroll-view {
     width: 100%;
@@ -35,7 +35,7 @@
 
 /* endregion */
 
-/*region ============ ListView ============ */
+/* region ============ ListView ============ */
 
 .unity-list-view > .unity-scroll-view {
     width: 100%;
@@ -47,7 +47,7 @@
 
 /* endregion */
 
-/*region ============ Scroller ============ */
+/* region ============ Scroller ============ */
 
 .unity-scroller--vertical {
     margin-left: 2px;
@@ -143,7 +143,7 @@
 
 /* endregion */
 
-/*region ============ Sliders ============ */
+/* region ============ Sliders ============ */
 
 .unity-base-slider--horizontal, .unity-min-max-slider {
     margin: 0;
@@ -204,7 +204,7 @@
 
 /* endregion */
 
-/*region ============ Button ============ */
+/* region ============ Button ============ */
 
 .unity-button {
     height: 30px;
@@ -230,7 +230,23 @@
 
 /* endregion */
 
-/*region ============ Label ============ */
+/* region ============ Link ============ */
+.unity-button.link {
+    height: auto;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    border-bottom-color: #c0c7d5;
+    border-radius: 0;
+}
+
+.unity-button.link:hover {
+    border-bottom-color: #415483;
+}
+
+/* endregion */
+
+/* region ============ Label ============ */
 
 .unity-label {
     margin: 0;
@@ -239,7 +255,7 @@
 
 /* endregion */
 
-/*region ============ TextField ============ */
+/* region ============ TextField ============ */
 
 .unity-text-field {
     margin: 0;
@@ -276,7 +292,7 @@
 
 /* endregion */
 
-/*region ============ Toggle ============ */
+/* region ============ Toggle ============ */
 
 .unity-toggle.toggle {
     justify-content: space-between;
@@ -344,7 +360,7 @@
 
 /* endregion */
 
-/*region ============ Foldout ============ */
+/* region ============ Foldout ============ */
 
 .unity-foldout {
     background-color: #2e3540;
