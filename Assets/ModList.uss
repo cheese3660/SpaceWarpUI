@@ -5,11 +5,16 @@
     width: 62.5%;
     flex-direction: column;
     padding: 12px;
+    background-color: #2e3540;
 }
 
 #body-container {
     flex-direction: row;
     flex-grow: 1;
+}
+
+.unity-scroll-view {
+    background-color: #1c222a;
 }
 
 .unity-label.disabled, .disabled > .unity-label {
