@@ -465,11 +465,14 @@
 }
 
 #title-bar > .unity-label {
-    -unity-text-align: middle-left;
-    font-size: 25px;
+    -unity-font-definition: var(--font-title-big);
+    -unity-text-align: lower-left;
     -unity-font-style: normal;
-    -unity-font-definition: var(--font-regular);
-    color: rgb(175, 178, 190);
+    font-size: 28px;
+    margin-bottom: -4px;
+    color: #f4f5f5;
+    letter-spacing: 2px;
+    word-spacing: -16px;
 }
 
 /* endregion */
