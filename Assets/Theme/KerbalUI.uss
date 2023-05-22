@@ -3,11 +3,21 @@
 /*noinspection CssInvalidPseudoSelector*/
 :root {
     /*noinspection CssUnknownTarget*/
-    --font-regular: url('/Assets/Theme/Fonts/JetBrainsMono-Regular SDF.asset');
+    --font-regular: url('/Assets/Theme/Fonts/JetBrainsMono/JetBrainsMono-Regular SDF.asset');
     /*noinspection CssUnknownTarget*/
-    --font-medium: url('/Assets/Theme/Fonts/JetBrainsMono-Medium SDF.asset');
+    --font-medium: url('/Assets/Theme/Fonts/JetBrainsMono/JetBrainsMono-Medium SDF.asset');
     /*noinspection CssUnknownTarget*/
-    --font-bold: url('/Assets/Theme/Fonts/JetBrainsMono-Bold SDF.asset');
+    --font-bold: url('/Assets/Theme/Fonts/JetBrainsMono/JetBrainsMono-Bold SDF.asset');
+    /*noinspection CssUnknownTarget*/
+    --font-title-big: url('/Assets/Theme/Fonts/LEDCounter7/led_counter-7 SDF.asset');
+    /*noinspection CssUnknownTarget*/
+    --font-title-big-italic: url('/Assets/Theme/Fonts/LEDCounter7/led_counter-7_italic SDF.asset');
+    /*noinspection CssUnknownTarget*/
+    --font-title-small: url('/Assets/Theme/Fonts/FutureMillennium/FutureMillennium SDF.asset');
+    /*noinspection CssUnknownTarget*/
+    --font-title-small-bold: url('/Assets/Theme/Fonts/FutureMillennium/FutureMillennium Black SDF.asset');
+    /*noinspection CssUnknownTarget*/
+    --font-title-small-italic: url('/Assets/Theme/Fonts/FutureMillennium/FutureMillennium Italic SDF.asset');
     -unity-font-definition: var(--font-bold);
     color: #c0c7d5;
 }
