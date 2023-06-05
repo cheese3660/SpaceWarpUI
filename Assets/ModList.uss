@@ -26,7 +26,11 @@
 }
 
 .unity-label.unsupported, .unsupported > .unity-label {
-    color: #FF0000;
+    color: #800000;
+}
+
+.unity-label.errored, .errored > .unity-label {
+    color: #ff0000;
 }
 
 /* region Mod list */
