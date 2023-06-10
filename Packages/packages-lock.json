@@ -115,6 +115,16 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "uitkforksp2.controls": {
+      "version": "https://github.com/jan-bures/UitkForKsp2.Controls.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.ui": "1.0.0-preview.18",
+        "com.unity.ui.builder": "1.0.0-preview.18"
+      },
+      "hash": "192a44bde53ec762706a2ff2614b0b597a4d3b75"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
