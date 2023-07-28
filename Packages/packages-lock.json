@@ -17,7 +17,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.21",
+      "version": "3.0.24",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -51,7 +51,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
-      "version": "1.3.4",
+      "version": "1.3.8",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -123,7 +123,7 @@
         "com.unity.ui": "1.0.0-preview.18",
         "com.unity.ui.builder": "1.0.0-preview.18"
       },
-      "hash": "192a44bde53ec762706a2ff2614b0b597a4d3b75"
+      "hash": "fea47af5785e573be34395f0fdc6a0ab2cd1afc8"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: eb9ee84eaf84888418434887ed49f764
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: swconsole.bundle
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 0ee6f0d35d9e875459bc972fc3f01c39, type: 3}
