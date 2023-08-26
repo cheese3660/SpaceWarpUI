@@ -25,7 +25,7 @@
                     <ui:VisualElement name="errored-mod-list" />
                 </ui:Foldout>
             </ui:ScrollView>
-            <ui:ScrollView name="details-scrollview" scroll-deceleration-rate="0,135" elasticity="0,1">
+            <ui:ScrollView name="details-scrollview" scroll-deceleration-rate="0,135" elasticity="0,1" style="visibility: visible;">
                 <ui:VisualElement name="details-container" style="visibility: hidden;">
                     <ui:Label name="details-name" />
                     <ui:VisualElement class="details-item">
@@ -93,6 +93,9 @@
                             <ui:Label text=")" class="details-label" />
                         </ui:VisualElement>
                     </ui:VisualElement>
+                    <ui:Foldout name="details-details-foldout" text="#SpaceWarp/ModList/Details">
+                        <ui:VisualElement name="details-dependencies-list" />
+                    </ui:Foldout>
                     <ui:Foldout name="details-dependencies-foldout" text="#SpaceWarp/ModList/Dependencies">
                         <ui:VisualElement name="details-dependencies-list" />
                     </ui:Foldout>
