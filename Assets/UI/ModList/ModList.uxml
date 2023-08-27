@@ -93,9 +93,7 @@
                             <ui:Label text=")" class="details-label" />
                         </ui:VisualElement>
                     </ui:VisualElement>
-                    <ui:Foldout name="details-details-foldout" text="#SpaceWarp/ModList/Details">
-                        <ui:VisualElement name="details-dependencies-list" />
-                    </ui:Foldout>
+                    <ui:Foldout name="details-details-foldout" text="#SpaceWarp/ModList/Details" />
                     <ui:Foldout name="details-dependencies-foldout" text="#SpaceWarp/ModList/Dependencies">
                         <ui:VisualElement name="details-dependencies-list" />
                     </ui:Foldout>
