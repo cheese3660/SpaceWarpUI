@@ -97,6 +97,9 @@
                     <ui:Foldout name="details-dependencies-foldout" text="#SpaceWarp/ModList/Dependencies">
                         <ui:VisualElement name="details-dependencies-list" />
                     </ui:Foldout>
+                    <ui:Foldout name="details-conflicts-foldout" text="#SpaceWarp/ModList/Conflicts" style="color: rgb(185, 0, 0); margin-top: 8px;">
+                        <ui:VisualElement name="details-conflicts-list" />
+                    </ui:Foldout>
                 </ui:VisualElement>
             </ui:ScrollView>
         </ui:VisualElement>
