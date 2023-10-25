@@ -121,6 +121,11 @@
     margin-top: 8px;
 }
 
+#details-conflicts-foldout {
+    color: rgb(185, 0, 0);
+    margin-top: 8px;
+}
+
 /* endregion */
 
 #footer {
